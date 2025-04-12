@@ -1,6 +1,8 @@
 # Gartic Phone CLI + AI
 
-Originally made for CSC 430 Assignment 2
+\-\-\- Originally made for CSC 430 Assignment 2 \-\-\-
+
+Description: A command-line interface (CLI) implementation of the Gartic Phone collaborative storytelling game, enhanced with AI capabilities. Players connect via TCP sockets, contribute segments to evolving stories. If a player disconnects or time out, instead of permanently ruining a segment of the game, they are replaced by AI substitutes (using local lightweight models like distilgpt2 via transformers or external APIs like LLaMA 3 via OpenRouter). Features include multithreaded server handling, nltk-based input validation, AI agents with 3 characters to replace disconnected players, and AI-powered voting for the final round.
 
 ## How to Run
 
@@ -61,7 +63,7 @@ Before running, ensure the following libraries are installed:
         * **Subsequent Rounds:** Stories are passed circularly (e.g., player 1 gets player 0's story).
         * **Disconnection/Timeout Handling:** If a socket fails, mark the player as offline, send a (potentially unreceived) timeout message, set their message to "---", and have a chatbot take over for future rounds.
     * **Last Round:** Print all generated stories.
-    * **Voting:** The Llama Chatbot determines the winner.
+    * **Voting:** The Ollama Chatbot determines the winner.
 
 ### Client Side
 1.  **Connection:** Connect to the server.
